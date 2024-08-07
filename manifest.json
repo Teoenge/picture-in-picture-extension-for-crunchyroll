@@ -22,7 +22,7 @@
                 "https://*.crunchyroll.com/*"
             ],
             "js": [
-                "content.js"
+                "js/content.js"
             ],
             "all_frames": true
         }
