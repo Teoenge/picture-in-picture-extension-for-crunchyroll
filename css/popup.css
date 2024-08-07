@@ -1,0 +1,200 @@
+@font-face {
+    font-family: "Metropolis";
+    font-style: normal;
+    font-weight: 800;
+    src: url("/fonts/Metropolis-Medium.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/Inter-Regular.woff2") format("woff2");
+}
+
+[data-theme="light"],
+:root {
+    --fontInter: "Inter", sans-serif;
+    --fontMetropolis: "Metropolis", sans-serif;
+    --bgColor: #42404c;
+    --text-color-primary: #fbfbfe;
+    --panel-bg-color: #42414d;
+    --panel-separator-color: #52525e;
+    --button-bg-focus-color-primary: #0df;
+    --button-bg-active-color-secondary: #5b5b66;
+    --button-bg-hover-color-secondary: #52525e;
+    --button-bg-color-secondary: #2b2a33;
+    --badge-destructive-bg-color: #ff8480;
+    --badge-destructive-text-color: #15141a;
+}
+
+[data-theme="dark"] {
+    --fontInter: "Inter", sans-serif;
+    --fontMetropolis: "Metropolis", sans-serif;
+    --bgColor: #42404c;
+    --text-color-primary: #fbfbfe;
+    --panel-bg-color: #42414d;
+    --panel-separator-color: #52525e;
+    --button-bg-focus-color-primary: #0df;
+    --button-bg-active-color-secondary: #5b5b66;
+    --button-bg-hover-color-secondary: #52525e;
+    --button-bg-color-secondary: #2b2a33;
+    --badge-destructive-bg-color: #ff8480;
+    --badge-destructive-text-color: #15141a;
+}
+
+* {
+    font-size: inherit;
+    margin-block-end: 0;
+    margin-block-start: 0;
+    margin-inline-end: 0;
+    margin-inline-start: 0;
+    padding-block-end: 0;
+    padding-block-start: 0;
+    padding-inline-end: 0;
+    padding-inline-start: 0;
+}
+  
+html {
+    background-color: var(--panel-bg-color);
+    box-sizing: border-box;
+    font-size: 12px;
+    overscroll-behavior: none;
+}
+  
+body {
+    background-color: var(--panel-bg-color);
+    color: var(--text-color-primary);
+    font-family: var(--fontInter);
+    font-size: 13px;
+    inline-size: 352px;
+    letter-spacing: -0.125px;
+    min-inline-size: 352px;
+}
+  
+html, body {
+    block-size: 100%; /* Bugfix: issue 948 */
+    max-block-size: 650px;
+    min-block-size: 300px;
+  
+    /* stylelint-disable */
+    scrollbar-width: none;
+    /* stylelint-enable */
+    transition: height 0.1s ease-in-out;
+}
+
+hr {
+    border: 0;
+    border-block-start: 1px solid var(--panel-separator-color);
+    display: block;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    background-color: var(--bgColor);
+    transition: height 0.1s ease-in-out;
+}
+
+.hide {
+    display: none !important;
+}
+
+.title {
+    block-size: 48px;
+    color: var(--text-color-primary);
+    font-family: var(--fontMetropolis);
+    font-size: 14px;
+    font-weight: bold;
+    inline-size: 100%;
+    letter-spacing: -0.1px;
+    line-height: 48px;
+    text-align: center;
+}
+
+.info-icon {
+    cursor: pointer;
+    block-size: 32px;
+    inline-size: 32px;
+    inset-block-start: 8px;
+    position: absolute;
+    inset-inline-end: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+  
+.info-icon:hover {
+    background-color: var(--button-bg-hover-color-secondary);
+}
+  
+.info-icon:focus {
+    outline: 2px solid var(--button-bg-focus-color-primary);
+    outline-offset: 2px;
+}
+  
+.info-icon:active {
+    background-color: var(--button-bg-active-color-secondary);
+    outline: none;
+}
+  
+.info-icon-alert::after {
+    block-size: 12px;
+    inline-size: 12px;
+    background-color: var(--badge-destructive-bg-color);
+    content: "1";
+    border-radius: 50%;
+    position: absolute;
+    inset-block-start: 2px;
+    inset-inline-end: 2px;
+    box-shadow: 0 0 1px #00000075;
+    font-size: 8px;
+    color: var(--badge-destructive-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+}
+
+.bottom-btn {
+    block-size: 32px;
+    border-radius: 4px;
+    color: var(--text-color-primary);
+    cursor: pointer;
+    font-family: var(--fontMetropolis);
+    font-size: 14px;
+    inline-size: calc(100% - 16px);
+    inset-block-end: 0;
+    line-height: 32px;
+    margin-block: 8px;
+    margin-inline: 8px;
+    padding-inline: 8px;
+    pointer-events: all;
+    position: absolute;
+    text-align: center;
+}
+
+.controller {
+    background-color: var(--button-bg-color-secondary);
+    color: var(--text-color-primary);
+    transition: background-color 0.1s ease-in-out;
+}
+
+.controller:hover {
+    background-color: var(--button-bg-hover-color-secondary);
+}
+  
+.controller:focus {
+    outline: 2px solid var(--button-bg-focus-color-primary);
+    outline-offset: 2px;
+}
+  
+.controller:active {
+    background-color: var(--button-bg-active-color-secondary);
+    outline: none;
+}
