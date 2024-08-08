@@ -55,72 +55,59 @@
     padding-inline-start: 0;
 }
   
-html {
-    background-color: var(--panel-bg-color);
-    box-sizing: border-box;
-    font-size: 12px;
-    overscroll-behavior: none;
-}
-  
 body {
     background-color: var(--panel-bg-color);
     color: var(--text-color-primary);
     font-family: var(--fontInter);
-    font-size: 13px;
-    inline-size: 352px;
     letter-spacing: -0.125px;
-    min-inline-size: 352px;
 }
   
 html, body {
-    block-size: 100%; /* Bugfix: issue 948 */
-    max-block-size: 650px;
-    min-block-size: 300px;
-  
-    /* stylelint-disable */
-    scrollbar-width: none;
-    /* stylelint-enable */
     transition: height 0.1s ease-in-out;
-}
-
-hr {
-    border: 0;
-    border-block-start: 1px solid var(--panel-separator-color);
-    display: block;
 }
 
 .panel {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    position: relative;
+    justify-content: flex-start;
     background-color: var(--bgColor);
     transition: height 0.1s ease-in-out;
+    width: 352px;
+    min-width: 352px;
 }
 
-.hide {
-    display: none !important;
+.header {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0px 8px;
 }
 
 .title {
-    block-size: 48px;
     color: var(--text-color-primary);
     font-family: var(--fontMetropolis);
     font-size: 14px;
     font-weight: bold;
-    inline-size: 100%;
     letter-spacing: -0.1px;
     line-height: 48px;
     text-align: center;
+}
+
+.divider {
+    border: 0;
+    border-block-start: 1px solid var(--panel-separator-color);
+}
+
+.dummy-block {
+    block-size: 32px;
+    inline-size: 32px;
 }
 
 .info-icon {
     cursor: pointer;
     block-size: 32px;
     inline-size: 32px;
-    inset-block-start: 8px;
-    position: absolute;
-    inset-inline-end: 8px;
     text-align: center;
     text-decoration: none;
     display: flex;
@@ -161,25 +148,19 @@ hr {
     font-weight: bolder;
 }
 
-.bottom-btn {
+.controller {
     block-size: 32px;
     border-radius: 4px;
     color: var(--text-color-primary);
     cursor: pointer;
     font-family: var(--fontMetropolis);
     font-size: 14px;
-    inline-size: calc(100% - 16px);
-    inset-block-end: 0;
     line-height: 32px;
     margin-block: 8px;
     margin-inline: 8px;
     padding-inline: 8px;
     pointer-events: all;
-    position: absolute;
     text-align: center;
-}
-
-.controller {
     background-color: var(--button-bg-color-secondary);
     color: var(--text-color-primary);
     transition: background-color 0.1s ease-in-out;
@@ -197,4 +178,12 @@ hr {
 .controller:active {
     background-color: var(--button-bg-active-color-secondary);
     outline: none;
+}
+
+.hyperlink {
+    text-align: center;
+    color: var(--button-bg-focus-color-primary);
+    font-family: var(--fontMetropolis);
+    font-size: 14px;
+    margin-bottom: 8px;
 }
