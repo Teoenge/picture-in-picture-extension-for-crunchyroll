@@ -179,11 +179,3 @@ html, body {
     background-color: var(--button-bg-active-color-secondary);
     outline: none;
 }
-
-.hyperlink {
-    text-align: center;
-    color: var(--button-bg-focus-color-primary);
-    font-family: var(--fontMetropolis);
-    font-size: 14px;
-    margin-bottom: 8px;
-}
