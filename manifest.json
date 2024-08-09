@@ -14,8 +14,7 @@
     },
     "permissions": [
         "scripting",
-        "activeTab",
-        "tabs"
+        "activeTab"
     ],
     "content_scripts": [
         {
