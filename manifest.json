@@ -19,10 +19,13 @@
     "content_scripts": [
         {
             "matches": [
-                "https://*.crunchyroll.com/*"
+                "*://*.crunchyroll.com/*"
             ],
             "js": [
                 "js/content.js"
+            ],
+            "css": [ 
+                "css/content.css"
             ],
             "all_frames": true
         }

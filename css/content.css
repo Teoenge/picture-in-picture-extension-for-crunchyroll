@@ -1,0 +1,16 @@
+.pip-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+.pip-control:active {
+    opacity: 0.2;
+} 
+
+.pip-control:hover {
+    background-color: #00000099;
+} 

@@ -15,7 +15,7 @@ This project is a **Picture-in-Picture (PiP)** browser addon that enhances your 
 
 |   Browser  | Supported |
 |:----------:|:---------:|
-| <img src="https://img.icons8.com/color/24/000000/chrome.png" alt="Chrome" />  | ❌        |
+| <img src="https://img.icons8.com/color/24/000000/chrome.png" alt="Chrome" />  | ✅        |
 | <img src="https://img.icons8.com/color/24/000000/firefox.png" alt="Firefox" /> | ✅        |
 | <img src="https://img.icons8.com/color/24/000000/ms-edge.png" alt="Edge" />     | ❌        |
 
