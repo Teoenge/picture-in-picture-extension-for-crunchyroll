@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Crunchyroll Picture-in-Picture Extension",
-    "version": "0.5",
+    "version": "0.6.0",
     "description": "Enable picture-in-picture mode for Crunchyroll's video player to watch your favorite anime while multitasking.",
     "action": {
         "default_icon": {
