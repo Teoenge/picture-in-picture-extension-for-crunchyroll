@@ -161,6 +161,30 @@ html, body {
     font-weight: bolder;
 }
 
+.qr-code-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 16px 16px 0px 16px;
+}
+
+.qr-code {
+    --s: 50px; /* the size on the corner */
+    --t: 5px;  /* the thickness of the border */
+    --g: 20px; /* the gap between the border and image */
+
+    padding: calc(var(--g) + var(--t));
+    outline: var(--t) solid var(--button-donate-bg-color); /* the color here */
+    outline-offset: calc(-1*var(--t));
+    mask:
+        conic-gradient(at var(--s) var(--s),#0000 75%,#000 0)
+        0 0/calc(100% - var(--s)) calc(100% - var(--s)),
+        linear-gradient(#000 0 0) content-box;
+
+    max-height: 320px;
+    max-width: 320px;
+}
+
 .donate-button {
     display: flex;
     flex-direction: column;
@@ -169,7 +193,7 @@ html, body {
     cursor: pointer;
     height: 50px;
     border-radius: 10px;
-    margin: 8px;
+    margin: 16px;
     pointer-events: all;
     text-decoration: none;
     background-color: var(--button-donate-bg-color);
