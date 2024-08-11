@@ -12,18 +12,28 @@
     src: url("/fonts/Inter-Regular.woff2") format("woff2");
 }
 
+@font-face {
+    font-family: "Cookie";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/Cookie-Regular.woff2") format("woff2");
+}
+
 [data-theme="light"],
 :root {
     --fontInter: "Inter", sans-serif;
     --fontMetropolis: "Metropolis", sans-serif;
+    --fontCookie: "Cookie", sans-serif;
     --bgColor: #42404c;
     --text-color-primary: #fbfbfe;
+    --text-color-donate: #000000;
     --panel-bg-color: #42414d;
     --panel-separator-color: #52525e;
     --button-bg-focus-color-primary: #0df;
     --button-bg-active-color-secondary: #5b5b66;
     --button-bg-hover-color-secondary: #52525e;
     --button-bg-color-secondary: #2b2a33;
+    --button-donate-bg-color: #ffdd00;
     --badge-destructive-bg-color: #ff8480;
     --badge-destructive-text-color: #15141a;
 }
@@ -31,14 +41,17 @@
 [data-theme="dark"] {
     --fontInter: "Inter", sans-serif;
     --fontMetropolis: "Metropolis", sans-serif;
+    --fontCookie: "Cookie", sans-serif;
     --bgColor: #42404c;
     --text-color-primary: #fbfbfe;
+    --text-color-donate: #000000;
     --panel-bg-color: #42414d;
     --panel-separator-color: #52525e;
     --button-bg-focus-color-primary: #0df;
     --button-bg-active-color-secondary: #5b5b66;
     --button-bg-hover-color-secondary: #52525e;
     --button-bg-color-secondary: #2b2a33;
+    --button-donate-bg-color: #ffdd00;
     --badge-destructive-bg-color: #ff8480;
     --badge-destructive-text-color: #15141a;
 }
@@ -148,34 +161,45 @@ html, body {
     font-weight: bolder;
 }
 
-.controller {
-    block-size: 32px;
+.donate-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border-radius: 4px;
-    color: var(--text-color-primary);
     cursor: pointer;
-    font-family: var(--fontMetropolis);
-    font-size: 14px;
-    line-height: 32px;
-    margin-block: 8px;
-    margin-inline: 8px;
-    padding-inline: 8px;
+    height: 50px;
+    border-radius: 10px;
+    margin: 8px;
     pointer-events: all;
-    text-align: center;
-    background-color: var(--button-bg-color-secondary);
-    color: var(--text-color-primary);
+    text-decoration: none;
+    background-color: var(--button-donate-bg-color);
     transition: background-color 0.1s ease-in-out;
 }
 
-.controller:hover {
-    background-color: var(--button-bg-hover-color-secondary);
+.donate-button:hover {
+    opacity: 0.85;
 }
   
-.controller:focus {
+.donate-button:focus {
     outline: 2px solid var(--button-bg-focus-color-primary);
     outline-offset: 2px;
 }
   
-.controller:active {
-    background-color: var(--button-bg-active-color-secondary);
+.donate-button:active {
+    opacity: 0.2;
     outline: none;
+}
+
+.donate-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.donate-text {
+    color: var(--text-color-donate); 
+    font-family: var(--fontCookie), cursive; 
+    font-size: 24px;
 }
