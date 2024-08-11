@@ -140,9 +140,18 @@ html, body {
         conic-gradient(at var(--s) var(--s),#0000 75%,#000 0)
         0 0/calc(100% - var(--s)) calc(100% - var(--s)),
         linear-gradient(#000 0 0) content-box;
+    transition: .4s;
 
     max-height: 320px;
     max-width: 320px;
+}
+
+.qr-code:hover {
+    outline-offset: calc(var(--g)/-1);
+}
+
+.qr-code:active {
+    opacity: 0.2;
 }
 
 .donate-button {
