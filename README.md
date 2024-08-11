@@ -47,4 +47,4 @@ This project is licensed under the MIT License. For more details, please refer t
 
 If you find this project helpful and want to support its development, consider buying me a coffee!
 
-<a href="https://www.buymeacoffee.com/teoenge"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=teoenge&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
+<a href="https://www.buymeacoffee.com/teoenge" target="_blank" rel="noopener noreferrer nofollow"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=teoenge&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
