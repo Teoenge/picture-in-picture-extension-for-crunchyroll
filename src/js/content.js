@@ -56,11 +56,7 @@ function startVideoControlsMonitor() {
         addPipControl();
     });
 
-    const container = document.querySelector('body');
-    if (!container)
-        return;
-
-    monitor.observe(container, {
+    monitor.observe(document.body, {
         attributes: false,
         childList: true,
         subtree: true
