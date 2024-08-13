@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Crunchyroll Picture-in-Picture Extension",
+    "name": "Picture-in-Picture Extension for Crunchyroll",
     "version": "0.9.0",
     "description": "Enable picture-in-picture mode for Crunchyroll's video player.",
     "action": {
