@@ -8,7 +8,7 @@ This project is a browser extension that enhances your Crunchyroll viewing exper
 
 - **Floating Video Window:** Enjoy Crunchyroll content in a movable and resizable window that stays on top of other applications.
 - **One-Click Activation:** Activate PiP mode directly from the Crunchyroll video player with a single click.
-- **Cross-Browser Compatibility:** Works seamlessly with major browsers like Chrome and Firefox.
+- **Cross-Browser Compatibility:** Works seamlessly with major browsers like Chrome, Firefox and Edge.
 - **Optimized Performance:** Designed to minimize the impact on your system's resources while running in PiP mode.
 
 ## Supported Browsers
@@ -17,7 +17,7 @@ This project is a browser extension that enhances your Crunchyroll viewing exper
 |:----------:|:---------:|
 | <img src="https://img.icons8.com/color/24/000000/chrome.png" alt="Chrome" />  | ✅        |
 | <img src="https://img.icons8.com/color/24/000000/firefox.png" alt="Firefox" /> | ✅        |
-| <img src="https://img.icons8.com/color/24/000000/ms-edge.png" alt="Edge" />     | ❌        |
+| <img src="https://img.icons8.com/color/24/000000/ms-edge.png" alt="Edge" />     | ✅        |
 
 ## Installation Instructions
 
