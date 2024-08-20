@@ -17,28 +17,28 @@ function createPipControl() {
     return pipControl;
 }
 
-function addPipControl() {
-    const settingsControl = document.getElementById('settingsControl');
-    if (!settingsControl)
+function addPipControl(settingsControl, video) {
+    if (!settingsControl || !video)
         return;
 
     const videoControlsContainer = settingsControl.parentElement;
+    if (!videoControlsContainer)
+        return;
+
     const pipControl = createPipControl();
-    videoControlsContainer?.insertBefore(pipControl, settingsControl);
+    videoControlsContainer.insertBefore(pipControl, settingsControl);
+    removePipAttribute(video);
 
     pipControl.addEventListener('click', e => {
         e.stopImmediatePropagation();
-
-        const video = document.getElementById('player0');
-        removePipAttribute(video);
 
         if (!document.pictureInPictureEnabled) 
             return;
 
         if (document.pictureInPictureElement) 
-            document.exitPictureInPicture().catch(err => console.log(err));
+            document.exitPictureInPicture();
         else
-            video?.requestPictureInPicture().catch(err => console.log(err));
+            video.requestPictureInPicture();
     })
 }
 
@@ -48,16 +48,21 @@ function startVideoControlsMonitor() {
 
     const monitor = new MutationObserver(() => {
         const video = document.getElementById('player0');
-        const settingsControl = document.getElementById('settingsControl');
-        const pipControl = document.getElementById('pipControl');
-        if (!video || !settingsControl || pipControl)
+        if (!video)
             return;
 
-        addPipControl();
+        const settingsControl = document.getElementById('settingsControl');
+        if (!settingsControl)
+            return;
+
+        const pipControl = document.getElementById('pipControl');
+        if (pipControl)
+            return;
+
+        addPipControl(settingsControl, video);
     });
 
     monitor.observe(document.body, {
-        attributes: false,
         childList: true,
         subtree: true
     });
