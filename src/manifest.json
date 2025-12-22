@@ -31,5 +31,14 @@
             ],
             "all_frames": true
         }
-    ]
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "{0B342EB8-8C59-4C11-A468-9D7868ABEBBE}",
+            "strict_min_version": "142.0",
+            "data_collection_permissions": {
+                "required": ["none"]
+            }
+        }
+    }
 }
