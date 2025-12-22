@@ -121,6 +121,20 @@ html, body {
     outline: none;
 }
 
+.hint-container {
+    margin: 16px 16px 0 16px;
+    padding: 12px;
+    background-color: var(--button-bg-focus-color-primary);
+    border-radius: 6px;
+    text-align: center;
+}
+
+.hint-text {
+    color: var(--text-color-donate);
+    font-family: var(--fontMetropolis);
+    font-size: 12px;
+}
+
 .qr-code-container {
     display: flex;
     flex-direction: row;
@@ -158,10 +172,9 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     height: 50px;
-    border-radius: 10px;
     margin: 16px;
     pointer-events: all;
     text-decoration: none;
