@@ -1,15 +1,32 @@
-.pip-control {
+#vilosControlsContainer {
+    position: relative;
+}
+
+#vilosControlsContainer .pip-control {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    height: 40px;
-    width: 40px;
+    height: 48px;
+    width: 48px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
-.pip-control:active {
+#vilosControlsContainer:hover .pip-control {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+#vilosControlsContainer:hover .pip-control:active {
     opacity: 0.2;
-} 
+}
 
 .pip-control:hover {
     background-color: #00000099;
