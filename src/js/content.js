@@ -35,13 +35,15 @@ function addPipControl(controlsContainer, video) {
   });
 }
 
+function getVideoElement() {
+  return document.querySelector("#player0, #bitmovinplayer-video-null");
+}
+
 function startVideoControlsMonitor() {
   if (isMonitoring) return;
 
   const monitor = new MutationObserver(() => {
-    const video = document.querySelector(
-      "#player0, #bitmovinplayer-video-null",
-    );
+    const video = getVideoElement();
     if (!video) return;
 
     const controlsContainer = document.getElementById("vilosControlsContainer");
@@ -62,10 +64,8 @@ function startVideoControlsMonitor() {
 }
 
 function init() {
-  if (navigator.userAgent.indexOf("Firefox") > 0) {
-    const video = document.querySelector(
-      "#player0, #bitmovinplayer-video-null",
-    );
+  if (navigator.userAgent.includes("Firefox")) {
+    const video = getVideoElement();
     removePipAttribute(video);
     return;
   }
