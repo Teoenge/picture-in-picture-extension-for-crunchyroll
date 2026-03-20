@@ -36,7 +36,7 @@ function addPipControl(controlsContainer, video) {
 }
 
 function getVideoElement() {
-  return document.querySelector("#player0, #bitmovinplayer-video-null");
+  return document.querySelector("video");
 }
 
 function startVideoControlsMonitor() {
