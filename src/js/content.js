@@ -1,7 +1,29 @@
 let isMonitoring = false;
+let videoObserver = null;
+
+function forceEnablePiP(video) {
+  if (!video) return;
+
+  removePipAttribute(video);
+
+  if (videoObserver) videoObserver.disconnect();
+
+  videoObserver = new MutationObserver(() => {
+    removePipAttribute(video);
+  });
+
+  videoObserver.observe(video, {
+    attributes: true,
+    attributeFilter: ["disablepictureinpicture"],
+  });
+}
 
 function removePipAttribute(video) {
-  video?.removeAttribute("disablepictureinpicture");
+  if (!video) return;
+
+  if (video.hasAttribute("disablepictureinpicture")) {
+    video.removeAttribute("disablepictureinpicture");
+  }
 }
 
 function createPipControl() {
@@ -23,7 +45,7 @@ function addPipControl(controlsContainer, video) {
 
   const pipControl = createPipControl();
   controlsContainer.appendChild(pipControl);
-  removePipAttribute(video);
+  forceEnablePiP(video);
 
   pipControl.addEventListener("click", (e) => {
     e.stopImmediatePropagation();
@@ -46,6 +68,12 @@ function startVideoControlsMonitor() {
     const video = getVideoElement();
     if (!video) return;
 
+    if (navigator.userAgent.includes("Firefox")) {
+      const video = getVideoElement();
+      forceEnablePiP(video);
+      return;
+    }
+
     const controlsContainer = document.getElementById("vilosControlsContainer");
     if (!controlsContainer) return;
 
@@ -66,7 +94,7 @@ function startVideoControlsMonitor() {
 function init() {
   if (navigator.userAgent.includes("Firefox")) {
     const video = getVideoElement();
-    removePipAttribute(video);
+    forceEnablePiP(video);
     return;
   }
 
