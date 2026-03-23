@@ -95,7 +95,6 @@ function init() {
   if (navigator.userAgent.includes("Firefox")) {
     const video = getVideoElement();
     forceEnablePiP(video);
-    return;
   }
 
   startVideoControlsMonitor();
